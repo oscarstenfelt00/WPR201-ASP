@@ -1,0 +1,32 @@
+﻿@model Personalen
+@{
+    Layout = "_Layout";
+}
+
+<div>
+    @{
+        try
+        {
+            var base64 = Convert.ToBase64String(@Model.image);      // konvertera bilden
+            var imgSrc = String.Format("data:image/gif;base64,{0}", base64);
+            <img src="@imgSrc" width="100" /> // länka till bilden i html
+        }
+        catch
+        {
+            <p>no image</p> //Visas om det inte fanns någon bild
+        }
+    }
+</div>
+
+<div>
+    <strong>Namn</strong>
+    @Html.DisplayFor(model => model.Namn)
+</div>
+<div>
+    <strong>Roll</strong>
+    @Html.DisplayFor(model => model.Roll)
+</div>
+<div>
+    <strong>Min Resa</strong>
+    @Html.DisplayFor(model => model.Min_Resa)
+</div>

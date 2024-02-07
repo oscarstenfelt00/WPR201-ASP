@@ -1,0 +1,31 @@
+﻿@model Personalen
+@{
+    Layout = "_Layout";
+}
+
+<div>
+    <strong>Namn</strong>
+    @Html.DisplayFor(model => model.Namn)
+</div>
+<div>
+    <strong>Roll</strong>
+    @Html.DisplayFor(model => model.Roll)
+</div>
+<div>
+    <strong>Telefon</strong>
+    @Html.DisplayFor(model => model.Telefon)
+</div>
+<div>
+    <strong>E-mail</strong>
+    @Html.DisplayFor(model => model.EMail)
+</div>
+<div>
+    <strong>Min Resa</strong>
+    @Html.DisplayFor(model => model.Min_Resa)
+</div>
+<form asp-action="Delete">
+    <input type="hidden" asp-for="Id" />
+    <div>
+        <input type="submit" value="Delete" />
+    </div>
+</form>

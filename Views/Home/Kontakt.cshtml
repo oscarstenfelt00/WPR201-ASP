@@ -1,0 +1,27 @@
+﻿@model List<Personalen>
+@{
+    Layout = "_Layout";
+}
+
+<table>
+    <thead>
+        <tr>
+            <td><strong></strong></td>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var Personal in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(modelItem => Personal.Namn)</td>
+            </tr>
+            <tr>
+                <td>@Html.DisplayFor(modelItem => Personal.Roll)</td>
+            </tr>
+            <tr>
+                <td><a asp-action="Om" asp-route-id=@Personal.Id>Visa mer om mig!</a></td>
+            </tr>
+            
+        }
+    </tbody>
+</table>

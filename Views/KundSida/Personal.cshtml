@@ -1,0 +1,23 @@
+﻿@model List<Personalen>
+@{
+    Layout = "_Layout";
+}
+
+<a asp-action="Create">Lägg till ny personal</a>
+<table>
+    <tbody>
+        @foreach (var Personal in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(modelItem => Personal.Namn)</td>
+            </tr>
+            <tr>
+                <td>@Html.DisplayFor(modelItem => Personal.Roll)</td>
+            </tr>
+            <tr>
+                <td><a asp-action="Edit" asp-route-id=@Personal.Id>Redigera | </a><a asp-action="Delete" asp-route-id=@Personal.Id>Delete</a></td>
+            </tr>
+        }
+        <a asp-action="Index">Tillbaka till startsidan</a>
+    </tbody>
+</table>

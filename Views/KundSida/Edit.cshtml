@@ -1,0 +1,30 @@
+﻿@model Personalen
+@{
+    Layout = "_Layout";
+}
+
+<h1>Ändra Info Om Personal</h1>
+<form asp-action="Edit">
+    @using (Html.BeginForm("Edit", "Content", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+        <div>
+            Namn: <input asp-for="Namn" />
+        </div>
+        <div>
+            Roll: <input asp-for="Roll" />
+        </div>
+        <div>
+            Telefon: <input asp-for="Telefon" />
+        </div>
+        <div>
+            E-mail: <input asp-for="EMail" />
+        </div>
+        <div>
+            Min Resa: <input asp-for="Min_Resa" />
+        </div>
+        <input type="file" name="ImageData" id="ImageData" onchange="fileCheck(this);" />
+        <div>
+            <input type="submit" value="Spara" />
+        </div>
+    }
+</form>

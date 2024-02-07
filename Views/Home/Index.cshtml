@@ -1,0 +1,70 @@
+﻿@model HomeModell
+@{
+    Layout = "_Layout";
+}
+<header>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Navbar</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon "></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" asp-action="Kontakt">Kontakt</a>
+                    </li>
+                    <li class="nav-item pt-1">
+                        <button class="btn btn-primary button button4" id="btnShowLogin" type="button">Logga In</button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="modal fade" tabindex="-1" id="loginModal"
+             data-keyboard="false" data-backdrop="static">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" id="btnHideLogIn" class="btn btn-primary button button4" data-dismiss="modal">
+                            ×
+                        </button>
+                        <h4 class="modal-title">Logga In</h4>
+                    </div>
+                    <div class="modal-body">
+                        <form asp-action="Index" asp-route-returnurl="@ViewData["ReturnUrl"]">
+                            <table>
+                                <tr>
+                                    <td>Användarnamn</td>
+                                    <td> @Html.EditorFor(m => m.UserName)</td>
+                                </tr>
+                                <tr>
+                                    <td>Lösenord</td>
+                                    <td> @Html.PasswordFor(m => m.Password)</td>
+                                </tr>
+                                <tr>
+                                    <td> <button type="submit" class="btn btn-primary button button4">Logga In</button></td>
+                                </tr>
+                            </table>
+                        </form>
+                        <p>
+                            @ViewBag.ErrorMessage
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<div class="container">
+    <div class="jumbotron pt-5">
+        <h1 class="display-4">Hello, world!</h1>
+        <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+        <hr class="my-4">
+        <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+        <p class="lead ">
+            <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+        </p>
+    </div>
+</div>
